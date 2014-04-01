@@ -1,0 +1,134 @@
+﻿<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        .tftable {
+            font-size: 24px;
+            border-width: 1px;
+            border-color: #83CD29;
+            border-collapse: collapse;
+        }
+
+            .tftable td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #83CD29;
+            }
+
+        div.centre {
+            width: 70%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load('visualization', '1.0', { 'packages': ['corechart'] });
+
+        google.setOnLoadCallback(init);
+
+        function init() {
+            var nonBlockingItems = [
+                  ['L1', 3],
+                  ['L2', 14],
+                  ['RAM', 250]
+            ];
+
+            var blockingItems = [
+                 ['Disc', 41000000],
+                 ['Network', 240000000]
+            ];
+
+            data = new google.visualization.DataTable();
+            data.addColumn('string', 'Operation');
+            data.addColumn('number', 'Ciclos de CPU');
+
+            var options = {
+                width: 600,
+                height: 300,
+                animation: {
+                    duration: 1400,
+                    easing: 'out'
+                },
+                legend: { position: 'none' },
+                colors: ['#83CD29']
+            };
+
+            var chkNonBlocking = document.getElementById("chkNonBlocking");
+            chkNonBlocking.onchange = drawChart;
+
+            var chkBlocking = document.getElementById("chkBlocking");
+            chkBlocking.onchange = drawChart;
+
+            function drawChart() {
+                chkNonBlocking.disabled = true;
+                chkBlocking.disabled = true;
+                google.visualization.events.addListener(chart, 'ready',
+                    function () {
+                        chkNonBlocking.disabled = false;
+                        chkBlocking.disabled = false;
+                    });
+
+                var rowsCount = data.getNumberOfRows();
+
+                for (var i = 0; i < rowsCount; i++) {
+                    data.removeRow(0);
+                }
+
+                if (chkNonBlocking.checked)
+                    data.addRows(nonBlockingItems);
+                if (chkBlocking.checked)
+                    data.addRows(blockingItems);
+
+                chart.draw(data, options);
+            }
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            drawChart();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="centre">
+        <h1>Non-blocking I/O?</h1>
+        <div id="chart_div"></div>
+
+        <table class="tftable" border="1">
+            <tr>
+                <td rowspan="3" style="white-space: nowrap; overflow: hidden;">
+                    <input type="checkbox" id="chkNonBlocking" checked="checked" />
+                </td>
+                <td><b>L1</b></td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td><b>L2</b></td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td><b>RAM</b></td>
+                <td>250</td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <input type="checkbox" id="chkBlocking" />
+                </td>
+                <td><b>Disc</b></td>
+                <td>41.000.000</td>
+            </tr>
+            <tr>
+                <td><b>Network</b></td>
+                <td>240.000.000</td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+
+
+
+    </div>
+</body>
+</html>
