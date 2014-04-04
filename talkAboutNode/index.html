@@ -6,13 +6,13 @@
     <meta charset='utf-8'>
     <script src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
     <style>
-        .next {
+        /*.next {
             opacity: 0.6;
         }
 
         .past {
             opacity: 0.6;
-        }
+        }*/
     </style>
 </head>
 
@@ -20,16 +20,23 @@
     <section class='slides layout-regulard'>
 
         <article>
-            <img src="src/imgs/nodejs-logo.png" style="display: block; margin-left: auto; margin-right: auto;" />
-            <small>Ricardo Valente</small>
+            <img src="src/imgs/nodejs-logo.png" style="display: block; margin-left: auto; margin-right: auto;" />            
         </article>
 
         <article>
-            <img src="src/imgs/reqVsCon.png" style="display: block; margin-left: auto; margin-right: auto;" />
+            <p><strong>Apache vs NGINX</strong></p>
+            <p><small>concurrency X reqs/sec</small></p>
+            <p>
+                <img src="src/imgs/reqVsCon.png" style="display: block; margin-left: auto; margin-right: auto;" />
+            </p>
         </article>
 
         <article>
-            <img src="src/imgs/memoryVsCon.png" style="display: block; margin-left: auto; margin-right: auto;" />
+            <p><strong>Apache vs NGINX</strong></p>
+            <p><small>concurrency X memory</small></p>
+            <p>
+                <img src="src/imgs/memoryVsCon.png" style="display: block; margin-left: auto; margin-right: auto;" />
+            </p>
         </article>
 
         <article>
@@ -37,16 +44,33 @@
         </article>
 
         <article>
+            <h3>Non-blocking I/O</h3>
             <pre>
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-    for (var i = 42; --i &gt;= 0;) {
-        alert('Hello ' + String(world));
-    }
-}
+var fs = require('fs');
+
+fs.readFile('test.txt', function (err, data) {
+    console.log(data.toString());
+});
+
+console.log("The end!");
             </pre>
 
+        </article>
+
+        <article>
+            
+        </article>
+
+        <article>
+            <h3>Some references</h3>
+            
+            <ul>
+                <li><a href="http://s3.amazonaws.com/four.livejournal/20091117/jsconf.pdf">Slides from JSConf 2009</a></li>
+                <li><a href="http://nodejs.org/jsconf2010.pdf">Slides from JSConf 2010</a></li>
+                <li><a href="https://www.youtube.com/watch?v=L0pjVcIsU6A">Node.js Explained</a></li>
+                
+            </ul>
+                
         </article>
 
     </section>
