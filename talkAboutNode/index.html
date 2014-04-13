@@ -93,10 +93,35 @@ console.log("The end!");
 
         <article>
             CommonJS modules
+            <pre>
+
+
+exports.hello = function() {
+  return 'Hello World'
+};
+
+
+                </pre>
+            <div class="build">
+                <p>
+                    <pre>
+
+
+var example = require('./example.js');
+example.hello();
+
+
+                </pre>
+                </p>
+            </div>
         </article>
 
-        <article>
-            CommonJS modules
+        <article >
+            <h3>Node Packaged Modules</h3>
+            
+            <a href="https://www.npmjs.org/" target="_blank" style="text-decoration: none;">
+                <img src="src/imgs/npm.png" style="margin-left: 15%;margin-top: 15%;" />
+            </a>            
         </article>
 
         <article>
@@ -124,9 +149,7 @@ console.log('Server running at http://127.0.0.1:1337/');
             <iframe src='http://nodejs.org/industry/' style="width: 110%"></iframe>
         </article>
 
-        <article>
-            Node Package Manager
-        </article>
+        
 
         <article>
             <a href="http://browserify.org/" target="_blank" style="text-decoration: none;">
@@ -145,9 +168,9 @@ console.log('Server running at http://127.0.0.1:1337/');
 
         <article>
             <div class="build">
-                <p>
-                    <h1 style="padding-left: 30%">Thank you!</h1>
-                </p>
+                <h1>
+                    <span style="padding-left: 30%">Thank you!</span>                
+                </h1>
             </div>
         </article>
 
