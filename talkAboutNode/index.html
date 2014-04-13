@@ -15,14 +15,30 @@
         </article>
 
         <article>
-            <ul>
-                <li>Evented oriented
-                </li>
-                <li>Non-Blocking
-                </li>
-                <li>?????
-                </li>
-            </ul>
+            <pre>
+
+
+Console.WriteLine("Please enter your name:");
+var name = Console.ReadLine();
+Console.WriteLine("Hello " + name);
+
+
+            </pre>
+            <div class="build">
+
+
+                <p>
+                    <pre>
+
+
+
+var result = database.query("select * from T");
+
+
+
+            </pre>
+                </p>
+            </div>
         </article>
 
         <article>
@@ -31,6 +47,9 @@
             <p>
                 <img src="src/imgs/reqVsCon.png" style="display: block; margin-left: auto; margin-right: auto;" />
             </p>
+            <div class='source'>
+                Source: <a href="http://s3.amazonaws.com/four.livejournal/20091117/jsconf.pdf" target="_blank">Slides from JSConf 2009</a>
+            </div>
         </article>
 
         <article>
@@ -39,18 +58,16 @@
             <p>
                 <img src="src/imgs/memoryVsCon.png" style="display: block; margin-left: auto; margin-right: auto;" />
             </p>
+            <div class='source'>
+                Source: <a href="http://s3.amazonaws.com/four.livejournal/20091117/jsconf.pdf" target="_blank">Slides from JSConf 2009</a>
+            </div>
         </article>
 
         <article>
-            Event loop
-        </article>
-
-        <article>
-            <iframe src='src/nonBlockingChart.html'></iframe>
-        </article>
-
-        <article>
-            <img src="src/imgs/node.png" />
+            <iframe src='src/nonBlockingChart.html' style="border: 0px;"></iframe>
+            <div class='source'>
+                Source: <a href="https://www.youtube.com/watch?v=L0pjVcIsU6A" target="_blank">Node.js Explained</a>
+            </div>
         </article>
 
         <article>
@@ -59,8 +76,8 @@
 
 
 
-var fs = require('fs');
-fs.readFile('test.txt', function (err, data) {
+
+fileSystem.readFile('sample.txt', function (err, data) {
     console.log(data.toString());
 });
 console.log("The end!");
@@ -68,16 +85,19 @@ console.log("The end!");
 
 
             </pre>
+            <div class="build">
+                <p class="green">The end!</p>
+                <p class="green">Content of the file</p>
+            </div>
         </article>
 
         <article>
-            CommonJs modules
+            CommonJS modules
         </article>
 
         <article>
-            Node Package Manager
+            CommonJS modules
         </article>
-
 
         <article>
             <h3>HTTP</h3>
@@ -96,10 +116,16 @@ console.log('Server running at http://127.0.0.1:1337/');
             </pre>
         </article>
 
-
+        <article>
+            Chat server!
+        </article>
 
         <article class='fill'>
-            <iframe src='http://nodejs.org/industry/'></iframe>
+            <iframe src='http://nodejs.org/industry/' style="width: 110%"></iframe>
+        </article>
+
+        <article>
+            Node Package Manager
         </article>
 
         <article>
@@ -115,19 +141,14 @@ console.log('Server running at http://127.0.0.1:1337/');
             <a href="http://visionmedia.github.io/mocha/" target="_blank" style="text-decoration: none;">
                 <img src="src/imgs/mocha.png" style="margin-left: 38px" />
             </a>
-
         </article>
 
         <article>
-            <h3>Some references</h3>
-
-            <ul>
-                <li><a href="http://s3.amazonaws.com/four.livejournal/20091117/jsconf.pdf" target="_blank">Slides from JSConf 2009</a></li>
-                <li><a href="http://nodejs.org/jsconf2010.pdf" target="_blank">Slides from JSConf 2010</a></li>
-                <li><a href="https://www.youtube.com/watch?v=L0pjVcIsU6A" target="_blank">Node.js Explained</a></li>
-
-            </ul>
-
+            <div class="build">
+                <p>
+                    <h1 style="padding-left: 30%">Thank you!</h1>
+                </p>
+            </div>
         </article>
 
     </section>
