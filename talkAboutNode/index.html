@@ -116,12 +116,12 @@ example.hello();
             </div>
         </article>
 
-        <article >
+        <article>
             <h3>Node Packaged Modules</h3>
-            
+
             <a href="https://www.npmjs.org/" target="_blank" style="text-decoration: none;">
-                <img src="src/imgs/npm.png" style="margin-left: 15%;margin-top: 15%;" />
-            </a>            
+                <img src="src/imgs/npm.png" style="margin-left: 15%; margin-top: 15%;" />
+            </a>
         </article>
 
         <article>
@@ -142,35 +142,60 @@ console.log('Server running at http://127.0.0.1:1337/');
         </article>
 
         <article>
-            <h3>Chat Server!</h3>
-<!--            <pre>
+            <h3>A chat server!</h3>
+            <pre>
 var http = require('http');
 var fs = require('fs');
 
-var app = http.createServer(function (request, response) {
-    fs.readFile("client.html", 'utf-8', function (error, data) {
-        response.writeHead(200, { 'Content-Type': 'text/html' });
-        response.write(data);
-        response.end();
+var server = http.createServer(function (request, response) {
+    fs.readFile('client.html', 'utf-8', function (error, data) {
+        response.end(data);
     });
 }).listen(1337);
 
-var io = require('socket.io').listen(app);
+var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
-    socket.on('message_to_server', function (data) {
-        io.sockets.emit("message_to_client", data);
+    socket.on('send', function (data) {
+        io.sockets.emit('receive', data);
     });
 });
-            </pre>-->
+            </pre>
         </article>
 
+
+        <article>
+            
+            <pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;script src=&quot;socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var socket = io.connect(&#39;http://localhost:1337&#39;);
+        socket.on(&#39;receive&#39;, function (data) {
+            alert(data);
+        });
+
+        function send() {
+            var msg = document.getElementById(&#39;txtMsg&#39;).value;
+            socket.emit( &#39;send&#39;, msg );
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&#39;text&#39; id=&#39;txtMsg&#39; /&gt;
+    &lt;input type=&#39;button&#39; onclick=&#39;send()&#39; value=&quot;send&quot;/&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            
+        </article>
 
         <article class='fill'>
             <iframe src='http://nodejs.org/industry/' style="width: 110%"></iframe>
         </article>
 
-        
+
 
         <article>
             <a href="http://browserify.org/" target="_blank" style="text-decoration: none;">
@@ -190,7 +215,7 @@ io.sockets.on('connection', function (socket) {
         <article>
             <div class="build">
                 <h1>
-                    <span style="padding-left: 30%">Thank you!</span>                
+                    <span style="padding-left: 30%">Thank you!</span>
                 </h1>
             </div>
         </article>

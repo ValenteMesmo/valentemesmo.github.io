@@ -1,24 +1,19 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="socket.io/socket.io.js"></script>
     <script type="text/javascript">
-        var socketio = io.connect("https://chatserver-c9-valentemesmo.c9.io");
-
-        socketio.on("message_to_client", function (data) {
-            var chatLog = document.getElementById("chatlog");
-            chatlog.innerHTML = "<hr/>" + data + chatlog.innerHTML;
+        var socket = io.connect('http://localhost:1337');
+        socket.on('receive', function (data) {
+            alert(data);
         });
 
-        function sendMessage() {
-            var messageInput = document.getElementById("messageInput");
-            socketio.emit("message_to_server", messageInput.value);
+        function send() {
+            socket.emit('send', document.getElementById('txtMsg').value);
         }
-		</script>
+    </script>
 </head>
 <body>
-    <input type="text" id="messageInput" />
-    <button onclick="sendMessage()">send</button>
-    <div id="chatlog"></div>
+    <input type='text' id='txtMsg' />
+    <input type='button' onclick='send()' value="send"/>
 </body>
 </html>

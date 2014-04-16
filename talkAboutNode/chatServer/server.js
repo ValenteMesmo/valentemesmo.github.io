@@ -1,18 +1,16 @@
 var http = require('http');
 var fs = require('fs');
 
-var app = http.createServer(function (request, response) {
-    fs.readFile("client.html", 'utf-8', function (error, data) {
-        response.writeHead(200, { 'Content-Type': 'text/html' });
-        response.write(data);
-        response.end();
+var server = http.createServer(function (request, response) {
+    fs.readFile('client.html', 'utf-8', function (error, data) {
+        response.end(data);
     });
-}).listen(process.env.PORT);
+}).listen(1337);
 
-var io = require('socket.io').listen(app);
+var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
-    socket.on('message_to_server', function (data) {
-        io.sockets.emit("message_to_client", data);
+    socket.on('send', function (data) {
+        io.sockets.emit('receive', data);
     });
 });
