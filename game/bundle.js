@@ -4768,7 +4768,7 @@ var io = require('socket.io-client');
 
 var socket =  
 	//io.connect("127.0.0.1:1338");
-	io.connect("http://gameserver-c9-valentemesmo.c9.io");
+	io.connect("https://gameserver-c9-valentemesmo.c9.io");
 	
 module.exports = socket;
 },{"socket.io-client":13}],17:[function(require,module,exports){
