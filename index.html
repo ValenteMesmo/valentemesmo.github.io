@@ -1,24 +1,24 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Unity Web Player | Pinball</title>
-		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
-		<script type="text/javascript">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Unity Web Player | Pinball</title>
+    <script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+    <script type="text/javascript">
 		<!--
 		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
 		if (document.location.protocol == 'https:')
 			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
 		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
 		-->
-		</script>
-		<script type="text/javascript">
+    </script>
+    <script type="text/javascript">
 		<!--
 			var config = {
-				width: 960, 
+				width: 960,
 				height: 600,
 				params: { enableDebugging:"0" }
-				
+
 			};
 			var u = new UnityObject2(config);
 
@@ -28,7 +28,7 @@
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
 				$missingScreen.hide();
 				$brokenScreen.hide();
-				
+
 				u.observeProgress(function (progress) {
 					switch(progress.pluginStatus) {
 						case "broken":
@@ -59,83 +59,86 @@
 				u.initPlugin(jQuery("#unityPlayer")[0], "WebPlayerBuild.unity3d");
 			});
 		-->
-		</script>
-		<style type="text/css">
-		<!--
-		body {
-			font-family: Helvetica, Verdana, Arial, sans-serif;
-			background-color: white;
-			color: black;
-			text-align: center;
-		}
-		a:link, a:visited {
-			color: #000;
-		}
-		a:active, a:hover {
-			color: #666;
-		}
-		p.header {
-			font-size: small;
-		}
-		p.header span {
-			font-weight: bold;
-		}
-		p.footer {
-			font-size: x-small;
-		}
-		div.content {
-			margin: auto;
-			width: 960px;
-		}
-		div.broken,
-		div.missing {
-			margin: auto;
-			position: relative;
-			top: 50%;
-			width: 193px;
-		}
-		div.broken a,
-		div.missing a {
-			height: 63px;
-			position: relative;
-			top: -31px;
-		}
-		div.broken img,
-		div.missing img {
-			border-width: 0px;
-		}
-		div.broken {
-			display: none;
-		}
-		div#unityPlayer {
-			cursor: default;
-			height: 600px;
-			width: 960px;
-		}
-		-->
-		</style>
-	</head>
-	<body>
-		<p class="header"><span>Unity Web Player | </span>Pinball</p>
-        <a href="https://github.com/ValenteMesmo/FirstGame"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" /></a>
-		<div class="content">
-			<div id="unityPlayer">
-				<div class="missing">
-					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
-						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
-					</a>
-				</div>
-				<div class="broken">
-					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
-						<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
-					</a>
-				</div>
-			</div>
-		</div>
-        <div>
-            <img src="imgs/zx.png" style="width:200px;height:auto"/>
-            <img src="imgs/as.png" style="width:200px;height:auto" />            
+    </script>
+    <style type="text/css">
+        <!--
+        body {
+            font-family: Helvetica, Verdana, Arial, sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+        a:link, a:visited {
+            color: #000;
+        }
+        a:active, a:hover {
+            color: #666;
+        }
+        p.header {
+            font-size: small;
+        }
+        p.header span {
+            font-weight: bold;
+        }
+        p.footer {
+            font-size: x-small;
+        }
+        div.content {
+            margin: auto;
+            width: 960px;
+        }
+        div.broken,
+        div.missing {
+            margin: auto;
+            position: relative;
+            top: 50%;
+            width: 193px;
+        }
+        div.broken a,
+        div.missing a {
+            height: 63px;
+            position: relative;
+            top: -31px;
+        }
+        div.broken img,
+        div.missing img {
+            border-width: 0px;
+        }
+        div.broken {
+            display: none;
+        }
+        div#unityPlayer {
+            cursor: default;
+            height: 600px;
+            width: 960px;
+        }
+        -->
+    </style>
+</head>
+<body>
+    <p class="header"><span>Unity Web Player | </span>Pinball</p>
+    <a href="https://github.com/ValenteMesmo/FirstGame/raw/master/pinball.apk">
+        <img src="imgs/android-icon.png" style="position: absolute; top: 0; right: 0; border: 0;" />
+    </a>    
+    <div class="content">
+        <div id="unityPlayer">
+            <div class="missing">
+                <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+                    <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+                </a>
+            </div>
+            <div class="broken">
+                <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+                    <img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+                </a>
+            </div>
         </div>
-		<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
-	</body>
+    </div>
+    <div>
+        <img src="imgs/zx.png" style="width:200px;height:auto" />
+        <img src="imgs/as.png" style="width:200px;height:auto" />
+    </div>
+    <p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+    </a>
+</body>
 </html>
