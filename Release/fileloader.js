@@ -26,8 +26,8 @@ Module.expectedDataFileDownloads++;
     var REMOTE_PACKAGE_NAME = typeof Module['locateFile'] === 'function' ?
                               Module['locateFile'](REMOTE_PACKAGE_BASE) :
                               ((Module['filePackagePrefixURL'] || '') + REMOTE_PACKAGE_BASE);
-    var REMOTE_PACKAGE_SIZE = 28055620;
-    var PACKAGE_UUID = '31998059-deae-4de4-868a-802b0a7451c3';
+    var REMOTE_PACKAGE_SIZE = 28055588;
+    var PACKAGE_UUID = '16f22c56-985c-4f6c-b5c0-84c6a50dc5b4';
   
     function fetchRemotePackage(packageName, packageSize, callback, errback) {
       var xhr = new XMLHttpRequest();
@@ -116,13 +116,13 @@ Module['FS_createPath']('/', 'Resources', true, true);
       },
     };
       new DataRequest(0, 118680, 0, 0).open('GET', '/level0');
-    new DataRequest(118680, 144464, 0, 0).open('GET', '/mainData');
-    new DataRequest(144464, 144621, 0, 0).open('GET', '/methods_pointedto_by_uievents.xml');
-    new DataRequest(144621, 167485, 0, 0).open('GET', '/sharedassets0.assets');
-    new DataRequest(167485, 25970005, 0, 0).open('GET', '/sharedassets1.assets');
-    new DataRequest(25970005, 25980108, 0, 0).open('GET', '/sharedassets1.resource');
-    new DataRequest(25980108, 27555144, 0, 0).open('GET', '/Resources/unity_default_resources');
-    new DataRequest(27555144, 28055620, 0, 0).open('GET', '/Resources/unity_builtin_extra');
+    new DataRequest(118680, 144432, 0, 0).open('GET', '/mainData');
+    new DataRequest(144432, 144589, 0, 0).open('GET', '/methods_pointedto_by_uievents.xml');
+    new DataRequest(144589, 167453, 0, 0).open('GET', '/sharedassets0.assets');
+    new DataRequest(167453, 25969973, 0, 0).open('GET', '/sharedassets1.assets');
+    new DataRequest(25969973, 25980076, 0, 0).open('GET', '/sharedassets1.resource');
+    new DataRequest(25980076, 27555112, 0, 0).open('GET', '/Resources/unity_default_resources');
+    new DataRequest(27555112, 28055588, 0, 0).open('GET', '/Resources/unity_builtin_extra');
 
       var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
       var IDB_RO = "readonly";
