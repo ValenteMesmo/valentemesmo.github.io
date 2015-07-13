@@ -26,8 +26,8 @@ Module.expectedDataFileDownloads++;
     var REMOTE_PACKAGE_NAME = typeof Module['locateFile'] === 'function' ?
                               Module['locateFile'](REMOTE_PACKAGE_BASE) :
                               ((Module['filePackagePrefixURL'] || '') + REMOTE_PACKAGE_BASE);
-    var REMOTE_PACKAGE_SIZE = 35129164;
-    var PACKAGE_UUID = 'f9497972-505f-4e5c-8bd0-3ebb5e27989b';
+    var REMOTE_PACKAGE_SIZE = 42764820;
+    var PACKAGE_UUID = 'a19b4fec-d0e5-4742-b21f-d5df220d151e';
   
     function fetchRemotePackage(packageName, packageSize, callback, errback) {
       var xhr = new XMLHttpRequest();
@@ -115,14 +115,14 @@ Module['FS_createPath']('/', 'Resources', true, true);
         this.requests[this.name] = null;
       },
     };
-      new DataRequest(0, 129088, 0, 0).open('GET', '/level0');
-    new DataRequest(129088, 155256, 0, 0).open('GET', '/mainData');
-    new DataRequest(155256, 155413, 0, 0).open('GET', '/methods_pointedto_by_uievents.xml');
-    new DataRequest(155413, 179413, 0, 0).open('GET', '/sharedassets0.assets');
-    new DataRequest(179413, 33043549, 0, 0).open('GET', '/sharedassets1.assets');
-    new DataRequest(33043549, 33053652, 0, 0).open('GET', '/sharedassets1.resource');
-    new DataRequest(33053652, 34628688, 0, 0).open('GET', '/Resources/unity_default_resources');
-    new DataRequest(34628688, 35129164, 0, 0).open('GET', '/Resources/unity_builtin_extra');
+      new DataRequest(0, 126832, 0, 0).open('GET', '/level0');
+    new DataRequest(126832, 153112, 0, 0).open('GET', '/mainData');
+    new DataRequest(153112, 153269, 0, 0).open('GET', '/methods_pointedto_by_uievents.xml');
+    new DataRequest(153269, 177645, 0, 0).open('GET', '/sharedassets0.assets');
+    new DataRequest(177645, 40679205, 0, 0).open('GET', '/sharedassets1.assets');
+    new DataRequest(40679205, 40689308, 0, 0).open('GET', '/sharedassets1.resource');
+    new DataRequest(40689308, 42264344, 0, 0).open('GET', '/Resources/unity_default_resources');
+    new DataRequest(42264344, 42764820, 0, 0).open('GET', '/Resources/unity_builtin_extra');
 
       var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
       var IDB_RO = "readonly";
